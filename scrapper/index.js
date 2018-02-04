@@ -1,6 +1,8 @@
 const request = require('request');
 const cheerio = require('cheerio');
 
+
+
 function getEbay(item) {
 
 	item = item.split(' ').join('+');
@@ -92,11 +94,19 @@ function parseEbay(body) {
 
 }
 
-setInterval(() => {
 
-	getEbay('macbook pro')
-	.then(parseEbay)
-	.then(items => items.map(Object.values).forEach(console.log))
-	.catch(e => console.log(e));
+// setInterval(() => {
 
-}, 60 * 60 * 2);
+// 	getEbay('macbook pro')
+// 	.then(parseEbay)
+// 	.then(items => items.map(Object.values).forEach(console.log))
+// 	.catch(e => console.log(e));
+
+// }, 60 * 60 * 2);
+
+const Interface = {
+	getEbay: getEbay,
+	parseEbay: parseEbay
+};
+
+module.exports = Interface;
