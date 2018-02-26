@@ -94,16 +94,6 @@ function parseEbay(body) {
 
 }
 
-
-// setInterval(() => {
-
-// 	getEbay('macbook pro')
-// 	.then(parseEbay)
-// 	.then(items => items.map(Object.values).forEach(console.log))
-// 	.catch(e => console.log(e));
-
-// }, 60 * 60 * 2);
-
 const Interface = {
 	getEbay: getEbay,
 	parseEbay: parseEbay
