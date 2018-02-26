@@ -4,9 +4,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const {getEbay,parseEbay} = require('./scrapper/index');
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 const data = [];
 
@@ -20,7 +22,8 @@ const getData = (item) => {
 };
 
 app.post('/item', (req, res) => {
-
+    console.log(req.body);
+    
     let item = req.body.item;
     console.log(item)
     getData(item);
