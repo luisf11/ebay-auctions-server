@@ -19,6 +19,11 @@ const getData = (item) => {
     .catch(e => console.log(e));
 };
 
+app.get('/',(req,res)=>{
+    res.statusCode= 200;
+    res.send('hello api');
+});
+
 app.post('/item', (req, res) => {
     let item = req.body.item;
     if(!item){
@@ -28,9 +33,13 @@ app.post('/item', (req, res) => {
         
     }
     getData(item);
-    setTimeout(() =>  res.send(data),1000 * 3);
+    setTimeout(() => 
+        res.send(data),1000 * 3);
+    
 });
 
 
 app.listen(3031);
 console.log("listening at port 3031");
+
+module.exports = app;
