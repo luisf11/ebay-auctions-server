@@ -39,6 +39,11 @@ node server.js
 curl -d '{"item":"item you want to find"}' -H "Content-Type: application/json" -X POST http://localhost:3000/item
 ```
 
+## Test
+
+```
+npm run test
+```
 Thanks to [Alenkart Rodriguez][alenkart profile] for the idea and the scrapper.
 
 [alenkart profile]:https://github.com/Alenkart/
